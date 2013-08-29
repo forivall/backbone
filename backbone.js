@@ -62,6 +62,8 @@
   // form param named `model`.
   Backbone.emulateJSON = false;
 
+  /* { bit: Events } */
+
   // Backbone.Events
   // ---------------
 
@@ -231,6 +233,10 @@
   // Allow the `Backbone` object to serve as a global event bus, for folks who
   // want global "pubsub" in a convenient place.
   _.extend(Backbone, Events);
+
+  /* { /bit } */
+
+  /* { bit: Model } */
 
   // Backbone.Model
   // --------------
@@ -581,6 +587,10 @@
       return _[method].apply(_, args);
     };
   });
+
+  /* { /bit } */
+
+  /* { bit: Collection } */
 
   // Backbone.Collection
   // -------------------
@@ -972,6 +982,10 @@
     };
   });
 
+  /* { /bit } */
+
+  /* { bit: View } */
+
   // Backbone.View
   // -------------
 
@@ -1107,6 +1121,10 @@
 
   });
 
+  /* { /bit } */
+
+  /* { bit: sync } */
+
   // Backbone.sync
   // -------------
 
@@ -1196,11 +1214,19 @@
     'read':   'GET'
   };
 
+  /* { /bit } */
+
+  /* { bit: ajax } */
+
   // Set the default implementation of `Backbone.ajax` to proxy through to `$`.
   // Override this if you'd like to use a different library.
   Backbone.ajax = function() {
     return Backbone.$.ajax.apply(Backbone.$, arguments);
   };
+
+  /* { /bit } */
+
+  /* { bit: Router } */
 
   // Backbone.Router
   // ---------------
@@ -1293,6 +1319,10 @@
     }
 
   });
+
+  /* { /bit } */
+
+  /* { bit: History } */
 
   // Backbone.History
   // ----------------
@@ -1512,8 +1542,12 @@
   // Create the default Backbone.history.
   Backbone.history = new History;
 
+  /* { /bit } */
+
   // Helpers
   // -------
+
+  /* { bit: extend } */
 
   // Helper function to correctly set up the prototype chain, for subclasses.
   // Similar to `goog.inherits`, but uses a hash of prototype properties and
@@ -1552,12 +1586,25 @@
   };
 
   // Set up inheritance for the model, collection, router, view and history.
-  Model.extend = Collection.extend = Router.extend = View.extend = History.extend = extend;
+  /* { bit: Model } */Model.extend = /* { /bit } */
+  /* { bit: Collection } */Collection.extend = /* { /bit } */
+  /* { bit: Router } */Router.extend = /* { /bit } */
+  /* { bit: View } */View.extend = /* { /bit } */
+  /* { bit: History } */History.extend = /* { /bit } */
+  extend;
+
+  /* { /bit } */
+
+  /* { bit: Model || sync } */
 
   // Throw an error when a URL is needed, and none is supplied.
   var urlError = function() {
     throw new Error('A "url" property or function must be specified');
   };
+
+  /* { /bit } */
+
+  /* { bit: Model } */
 
   // Wrap an optional error callback with a fallback error event.
   var wrapError = function(model, options) {
@@ -1567,5 +1614,7 @@
       model.trigger('error', model, resp, options);
     };
   };
+
+  /* { /bit } */
 
 }).call(this);

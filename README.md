@@ -24,3 +24,9 @@ http://github.com/documentcloud/backbone/contributors
 
 Special thanks to Robert Kieffer for the original philosophy behind Backbone. 
 http://github.com/broofa
+
+In this fork, I've denoted different points where backbone can be split up into separate modules,
+for use with a currently-nonexistent tool (done by hand at the moment)
+
+For visualsearch / search.js, use [ Model Collection sync extend ]
+That build is the only one I've run through the tests so far.

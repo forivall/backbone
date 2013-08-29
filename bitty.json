@@ -1,0 +1,8 @@
+{
+    "depends": {
+        "Model": ["Events"],
+        "Collection": ["Events", "Model"],
+        "History": ["Events"],
+        "Router": ["History"]
+    }
+}
