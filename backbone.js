@@ -948,7 +948,7 @@
     // Method for checking whether an object should be considered a model for
     // the purposes of adding to the collection.
     _isModel: function (model) {
-      return model instanceof Model;
+      return (this.model && model instanceof this.model) || model instanceof Model;
     },
 
     // Internal method to create a model's ties to a collection.
